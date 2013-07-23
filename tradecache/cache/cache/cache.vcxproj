@@ -85,7 +85,8 @@
     <ClInclude Include="business.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="entrust.h" />
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="luaunit.h" />
+    <ClInclude Include="d.h" />
     <ClInclude Include="unitasset.h" />
     <ClInclude Include="unitstock.h" />
   </ItemGroup>

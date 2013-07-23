@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="unitasset.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -42,6 +39,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="business.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="luaunit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="d.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

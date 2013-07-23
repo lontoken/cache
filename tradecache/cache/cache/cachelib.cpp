@@ -3,15 +3,13 @@
 * Auth: ganlong
 * Build: 2013.07.23
 **********************************************************************/
-
-#include <lua.hpp>
-//#include <lauxlib.h>
-//#include <lualib.h>
+#include "config.h"
+#include "luaunit.h"
 
 //待注册的C函数，该函数的声明形式在上面的例子中已经给出。
 //需要说明的是，该函数必须以C的形式被导出，因此extern "C"是必须的。
 //函数代码和上例相同，这里不再赘述。
-extern "C" int add(lua_State* L) 
+CACHE_LIB_API add(lua_State* L) 
 {
     double op1 = luaL_checknumber(L,1);
     double op2 = luaL_checknumber(L,2);
@@ -19,7 +17,7 @@ extern "C" int add(lua_State* L)
     return 1;
 }
 
-extern "C" int sub(lua_State* L)
+CACHE_LIB_API sub(lua_State* L)
 {
     double op1 = luaL_checknumber(L,1);
     double op2 = luaL_checknumber(L,2);

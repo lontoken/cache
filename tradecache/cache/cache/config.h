@@ -11,7 +11,7 @@
 
 #include <sstream>
 
-#define STRUCT_PACK_LEN 4
+#define STRUCT_PACK_LEN 1
 
 typedef double CURRENCY_TYPE;
 typedef double PRICE_TYPE;

@@ -47,4 +47,6 @@ typedef struct TBusiness{
     OperateType opType;
 } Business;
 
+#pragma pack()
+
 #endif

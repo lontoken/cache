@@ -36,6 +36,8 @@ typedef struct TUnitStock{
     CURRENCY_TYPE sale_fee;
 
     OperateType opType;
-}UnitStock;
+}UnitStock;  
+
+#pragma pack()
 
 #endif

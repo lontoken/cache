@@ -48,4 +48,6 @@ typedef struct TEntrust{
     OperateType opType;
 }Entrust;
 
+#pragma pack()
+
 #endif

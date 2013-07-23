@@ -10,6 +10,7 @@
 
 #include <sstream>
 #include "config.h"
+#include "luaunit.h"
 
 #pragma pack(STRUCT_PACK_LEN)
 
@@ -29,5 +30,16 @@ typedef struct TUnitAsset{
 
     OperateType opType;
 }UnitAsset;
+
+#pragma pack()
+
+CACHE_LIB_API GetUnitAsset(lua_State* L)
+{
+    int unitId = 0;
+    char curCode[4] = {0};
+
+    unitId = PAI(L, 1);
+    CS(curCode, L, 2);
+}
 
 #endif
