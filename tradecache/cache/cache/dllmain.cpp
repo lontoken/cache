@@ -1,6 +1,10 @@
 // dllmain.cpp : 定义 DLL 应用程序的入口点。
-#include "stdafx.h"
 #include <cstdio>
+
+
+#if defined(_WINDOWS) || defined(WIN32) || defined(_WIN32)
+
+#include <windows.h>
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -19,3 +23,4 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
+#endif

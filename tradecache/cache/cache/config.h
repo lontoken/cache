@@ -28,9 +28,9 @@ typedef char BS_TYPE;
 typedef char CURRENCY_CODE_TYPE[4];
 
 typedef enum TOperateType{
-    Get = 0,
-    Update = 1,
-    Insert = 2
+    OperateTypeGet = 0,
+    OperateTypeUpdate = 1,
+    OperateTypeInsert = 2
 }OperateType;
 
 #endif

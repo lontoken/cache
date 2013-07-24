@@ -1,0 +1,42 @@
+﻿生成启动时间为 2013/7/24 19:24:32。
+     1>项目“e:\Workstation\cache\tradecache\cache\cachetest\cachetest.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\cachetest.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         d:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IE:\Workstation\cache\tradecache\cache\cache /I"e:\Program Files (x86)\Lua\5.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(13): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的声明
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(21): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的声明
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(29): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的声明
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(37): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的声明
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(45): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_snprintf”的声明
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(76): warning C4101: “pRes”: 未引用的局部变量
+     1>e:\workstation\cache\tradecache\cache\cachetest\main.cpp(77): warning C4101: “pCode”: 未引用的局部变量
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         d:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Workstation\cache\tradecache\cache\Debug\cachetest.exe" /INCREMENTAL /NOLOGO /LIBPATH:"e:\Program Files (x86)\Lua\5.1\lib" lua5.1.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\cachetest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Workstation\cache\tradecache\cache\Debug\cachetest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Workstation\cache\tradecache\cache\Debug\cachetest.lib" /MACHINE:X86 Debug\cachetest.exe.embed.manifest.res
+         Debug\binarysearch.obj
+         Debug\cachelib.obj
+         Debug\dllmain.obj
+         Debug\unitasset.obj
+         Debug\main.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\cachetest.exe.embed.manifest" /manifest Debug\cachetest.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         cachetest.vcxproj -> E:\Workstation\cache\tradecache\cache\Debug\cachetest.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\cachetest.unsuccessfulbuild”。
+         正在对“Debug\cachetest.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“e:\Workstation\cache\tradecache\cache\cachetest\cachetest.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.31

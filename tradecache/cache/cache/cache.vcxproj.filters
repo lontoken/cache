@@ -24,6 +24,18 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="unitasset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="binarysearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="unitstock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hashsearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="unitasset.h">
@@ -44,7 +56,13 @@
     <ClInclude Include="luaunit.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="d.h">
+    <ClInclude Include="base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="binarysearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hashsearch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

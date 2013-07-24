@@ -9,7 +9,14 @@
 #pragma once
 
 #include <sstream>
+#include <vector>
+#include <cstdio>
+#include <cctype>  
 #include "config.h"
+#include "luaunit.h"
+#include "base.h"
+
+using namespace std;
 
 #pragma pack(STRUCT_PACK_LEN)
 
@@ -38,6 +45,54 @@ typedef struct TUnitStock{
     OperateType opType;
 }UnitStock;  
 
+typedef struct TBSNote{
+    BS_TYPE bs;
+    UnitStock* pUnitStock;
+}BSNote;
+
+typedef struct TUnitStockStockCode{
+    STOCKCODE_TYPE stock_code;
+    unsigned long nHashA;
+    unsigned long nHashB;
+    char bExists;
+    BSNote* pBs;
+}UnitStockStockCode;
+
+typedef struct TUnitStockNote{
+    int unit_id;
+    int noteSize;
+    int noteCapacity;
+    UnitStockStockCode* pStockNote;
+}UnitStockNote;
+
 #pragma pack()
+
+class UnitStockStore{
+public:
+    UnitStockStore(){};
+    virtual ~UnitStockStore(){};
+
+    static UnitStockStore& getInstance(){return m_instance;};
+
+    UnitStock* addUnitStock(UnitStock* pUnitStock);
+    UnitStock* getUnitStock(int unitId, STOCKCODE_TYPE stock, BS_TYPE bs);
+    UnitStock* updateUnitStockByTrade(UnitStock* pAsset);
+private:
+    UnitStockStore(UnitStockStore const&){};              // copy ctor is hidden
+    UnitStockStore& operator=(UnitStockStore const&){};           // assign op is hidden
+
+    std::vector<UnitStockNote*> vUnitList;
+    static UnitStockStore m_instance;
+};
+
+CACHE_LIB_API getUnitStock(lua_State* L);
+
+CACHE_LIB_API addUnitStock(lua_State* L);
+
+CACHE_LIB_API updateUnitStockByTrade(lua_State* L);
+
+int BinarySearchVector_US(std::vector<UnitStockNote*>::iterator it, int low, int high, int target, int *pos);
+int AddHashTable_US(char *pStr, UnitStockStockCode *lpTable, int nTableSize);
+int GetHashTablePos_US(char *pStr, UnitStockStockCode *lpTable, int nTableSize);
 
 #endif

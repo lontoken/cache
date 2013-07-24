@@ -78,15 +78,21 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="binarysearch.cpp" />
     <ClCompile Include="cachelib.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="hashsearch.cpp" />
+    <ClCompile Include="unitasset.cpp" />
+    <ClCompile Include="unitstock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarysearch.h" />
     <ClInclude Include="business.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="entrust.h" />
+    <ClInclude Include="hashsearch.h" />
     <ClInclude Include="luaunit.h" />
-    <ClInclude Include="d.h" />
+    <ClInclude Include="base.h" />
     <ClInclude Include="unitasset.h" />
     <ClInclude Include="unitstock.h" />
   </ItemGroup>

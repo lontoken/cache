@@ -39,6 +39,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -50,10 +51,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)cache;$(LUA_DEV)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(LUA_DEV)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua5.1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -74,9 +78,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cache\cache.vcxproj">
-      <Project>{b309c1fb-f3f5-4f41-adde-03c043bf3fcc}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\cache\binarysearch.cpp" />
+    <ClCompile Include="..\cache\cachelib.cpp" />
+    <ClCompile Include="..\cache\dllmain.cpp" />
+    <ClCompile Include="..\cache\unitasset.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\cache\base.h" />
+    <ClInclude Include="..\cache\binarysearch.h" />
+    <ClInclude Include="..\cache\business.h" />
+    <ClInclude Include="..\cache\config.h" />
+    <ClInclude Include="..\cache\entrust.h" />
+    <ClInclude Include="..\cache\luaunit.h" />
+    <ClInclude Include="..\cache\unitasset.h" />
+    <ClInclude Include="..\cache\unitstock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

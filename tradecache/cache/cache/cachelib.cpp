@@ -5,10 +5,12 @@
 **********************************************************************/
 #include "config.h"
 #include "luaunit.h"
+#include "unitasset.h"
+#include "unitstock.h"
 
 //待注册的C函数，该函数的声明形式在上面的例子中已经给出。
 //需要说明的是，该函数必须以C的形式被导出，因此extern "C"是必须的。
-//函数代码和上例相同，这里不再赘述。
+//函数代码和上例相同，这里不再赘述
 CACHE_LIB_API add(lua_State* L) 
 {
     double op1 = luaL_checknumber(L,1);
@@ -31,6 +33,12 @@ CACHE_LIB_API sub(lua_State* L)
 static luaL_Reg mylibs[] = { 
     {"add", add},
     {"sub", sub},
+    {"getUnitAsset", getUnitAsset},
+    {"addUnitAsset", addUnitAsset},
+    {"updateUnitAssetByTrade", updateUnitAssetByTrade},
+    {"getUnitStock", getUnitStock},
+    {"addUnitStock", addUnitStock},
+    {"updateUnitStockByTrade", updateUnitStockByTrade},
     {NULL, NULL} 
 }; 
 
