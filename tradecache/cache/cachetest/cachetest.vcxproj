@@ -81,7 +81,9 @@
     <ClCompile Include="..\cache\binarysearch.cpp" />
     <ClCompile Include="..\cache\cachelib.cpp" />
     <ClCompile Include="..\cache\dllmain.cpp" />
+    <ClCompile Include="..\cache\hashsearch.cpp" />
     <ClCompile Include="..\cache\unitasset.cpp" />
+    <ClCompile Include="..\cache\unitstock.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

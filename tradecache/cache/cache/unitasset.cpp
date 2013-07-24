@@ -48,10 +48,6 @@ CACHE_LIB_API getUnitAsset(lua_State* L)
     CS(curCode, L, 2);
 
     UnitAsset* pAsset = UnitAssetStore::getInstance().getUnitAsset(unitId, curCode);
-    //UnitAsset* pAsset = new UnitAsset();
-    //pAsset->busin_date = 2;
-    //pAsset->unit_id = 21;
-    //snprintf(pAsset->currency_code, sizeof(pAsset->currency_code), "CNY");
 
     if(pAsset){
         PN(L, 0);

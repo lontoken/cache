@@ -49,9 +49,9 @@ int AddHashTable_US(char *pStr, UnitStockStockCode *lpTable, int nTableSize)
         }
     }
 
-    lpTable->bExists = '1';
-    lpTable->nHashA = nHashA;
-    lpTable->nHashB = nHashB;
+    (lpTable + nHashPos) ->bExists = '1';
+    (lpTable + nHashPos)->nHashA = nHashA;
+    (lpTable + nHashPos)->nHashB = nHashB;
 
     return nHashPos;
 }
@@ -79,18 +79,75 @@ int GetHashTablePos_US(char *pStr, UnitStockStockCode *lpTable, int nTableSize)
 }
 
 
+//获取子账户的指定证券、多空标志的股份信息
+//@param 1 int 子账户ID
+//@param 2 stockCode 币种
+//@param 3 bs
+//@return 1 0:找到数据  非0:没找到
+//@return 2 table{busin_date, unit_id, currency_code, begin_cash, current_cash, 
+//          prebuy_balance, prebuy_fee, presale_balance, input_balance, output_balance, 
+//          input_total, output_total, opType}
 CACHE_LIB_API getUnitStock(lua_State* L)
 {
-    return 1;
+    int unitId = 0;
+    STOCKCODE_TYPE stockCode = {0};
+    BS_TYPE bs = 0;
+
+    unitId = PAI(L, 1);
+    CS(stockCode, L, 2);
+    bs = PAC(L, 3);
+
+    //cout << "getUnitStock : " << unitId << " " << stockCode << " " << bs << endl;
+
+    UnitStock* pAsset = UnitStockStore::getInstance().getUnitStock(unitId, stockCode, bs);
+
+    if(pAsset){
+        PN(L, 0);
+        LUAPACK_UNITSTOCK_TABLE(L, pAsset);
+        return 2;
+    }else{
+        PN(L, 1);
+        return 1;
+    }
 }
 
+//@param {busin_date, unit_id, stock_code, bs, begin_amount, 
+//    begin_cost, begin_total_profit, begin_total_buyfee, begin_total_salefee, current_amount, 
+//    prebuy_amount, presale_amount, prebuy_balance, presale_balance, buy_amount, 
+//    sale_amount, buy_balance, sale_balance, buy_fee, sale_fee
 CACHE_LIB_API addUnitStock(lua_State* L)
 {
+    UnitStock* pAsset = new UnitStock();
+    memset(pAsset, 0, sizeof(UnitStock));
+
+    LUAUNPACK_UNITSTOCK(L, pAsset);
+
+    //cout << "addUnitStock : " << pAsset->unit_id << " " << pAsset->stock_code << " " << pAsset->bs << endl;
+
+    UnitStock* pRes = UnitStockStore::getInstance().addUnitStock(pAsset);
+    if(pRes){
+        PN(L, 0);
+    }else{
+        PN(L, 1);
+    }
+
     return 1;
 }
 
 CACHE_LIB_API updateUnitStockByTrade(lua_State* L)
 {
+    UnitStock asset;
+    memset(&asset, 0, sizeof(UnitStock));
+    asset.unit_id = PAI(L, 1); 
+    CS(asset.stock_code, L, 2); 
+
+    UnitStock* pRes = UnitStockStore::getInstance().updateUnitStockByTrade(&asset);
+    if(pRes){
+        PN(L, 0);
+    }else{
+        PN(L, 1);
+    }
+
     return 1;
 }
 

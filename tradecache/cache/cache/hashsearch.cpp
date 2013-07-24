@@ -1,5 +1,8 @@
+#include <iostream>
 #include "hashsearch.h"
 #include "base.h"
+
+HashTableIniter HashTableIniter::m_instance;
 
 //crytTable[]里面保存的是HashString函数里面将会用到的一些数据，在prepareCryptTable  
 //函数里面初始化  
@@ -25,6 +28,7 @@ int getNextHashTableSize(int curSize)
 //以下的函数生成一个长度为0x500（合10进制数：1280）的cryptTable[0x500]  
 void prepareCryptTable()  
 {   
+    std::cout << "==prepareCryptTable== call == " << std::endl;
     unsigned long seed = 0x00100001, index1 = 0, index2 = 0, i;  
   
     for( index1 = 0; index1 < 0x100; index1++ )  

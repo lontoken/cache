@@ -21,6 +21,12 @@ void prepareCryptTable();
 //·µ»ØlpszFileName ×Ö·û´®µÄhashÖµ£»  
 unsigned long HashString( char *pStr, unsigned long dwHashType );
 
-void printTable();
+
+class HashTableIniter{
+public:
+    static HashTableIniter m_instance;
+private:
+    HashTableIniter(){prepareCryptTable();};
+};
 
 #endif
